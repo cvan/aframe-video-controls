@@ -1,27 +1,29 @@
 ## aframe-video-controls
 
-A video control component for [A-Frame](https://aframe.io). Demo [here] (https://oscarmarinmiro.github.io/aframe-video-controls)
+A video-controls component for [A-Frame](https://aframe.io/).
 
-It attaches to a video asset so you can play/pause the video (assuing it is projected on a plane or sphere) by looking and clicking on the 'play' icon or transport bar.
+**[View demo here!](https://oscarmarinmiro.github.io/aframe-video-controls)**
 
-You can also press the 'space bar' or the arrow keys to control the video if you are in a 'desktop' computer
+It attaches to a video asset so you can play/pause the video (assuming it is projected on a plane or sphere) by looking and clicking on the 'play' icon or transport bar.
+
+You can also press the 'space bar' or the arrow keys to control the video if you are on a 'desktop' computer.
 
 !["The component in action"](/img/video-component.png?raw=true "The component in action")
 
 #### Feedback is needed and very welcome, specially regarding User Experience!!!
 
-I'm working on the following features, but feel free to suggest via Github Issues:
+I'm working on the following features, but feel free to suggest via GitHub Issues:
 
-- 'Flat' component if on Desktop (i.e: not in the 3D space)
-- Test on iPhone and Vive (at the moment I tested this in Android, Cardboard and Oculus Rift DK2)
+- 'Flat' component if on Desktop (i.e., not in the 3D space)
+- Test on iPhone and Vive (at the moment I tested this in Android, Cardboard, and Oculus Rift DK2)
 - Test on much bigger files
 - Volume controls
 - Another control to jump between different files so you can 'browse' different videos
-- 'Auto hide feature': If x seconds have passed after last interaction with player, hide the controls and A-Frame cursor
+- 'Auto-hide feature': If `x` seconds have passed after last interaction with player, hide the controls and A-Frame cursor
 
 ### Demo
 
-You can play with a live demo [here] (https://oscarmarinmiro.github.io/aframe-video-controls)
+You can play with a **[live demo here](https://oscarmarinmiro.github.io/aframe-video-controls)**!
 
 
 ### Properties
@@ -62,33 +64,31 @@ Otherwise, the default 'play' and 'pause' images (CDN-hosted) will be used.
 
 Install and use by directly including the [browser files](dist):
 
-This example projects a 360 video into a videosphere and attaches the controls to it.
+This example projects a 360° video into a videosphere and attaches the controls to it.
 
 ```html
-
-<head>
-  <title>My A-Frame Scene</title>
-  <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
-  <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
-</head>
-
- <body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My A-Frame Scene</title>
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+  </head>
+  <body>
     <a-scene>
       <a-assets>
-        <video id="video_1" src="https://ucarecdn.com/bcece0a8-86ce-460e-856b-40dac4875f15/"></video>
+        <!-- HD version: https://ucarecdn.com/bcece0a8-86ce-460e-856b-40dac4875f15/city-4096-mp4-30fps-x264-ffmpeg.mp4 -->
+        <video id="video_1" src="https://ucarecdn.com/51eeadc9-62f4-4997-a3e3-d60955d90990/city-3168-mp4-30fps-x264-ffmpeg.mp4" playsinline webkit-playsinline crossorigin="anonymous"></video>
       </a-assets>
-
       <a-camera position="0 0 5">
-          <a-cursor id="cursor" color="yellow"></a-cursor>
+        <a-cursor id="cursor" color="yellow"></a-cursor>
       </a-camera>
-
       <a-videosphere src="#video_1" rotation="0 180 0"></a-videosphere>
-
-      <a-entity video-controls="src:#video_1"></a-entity>
-
+      <a-entity video-controls="src: #video_1"></a-entity>
     </a-scene>
   </body>
-
+</html>
 ```
 
 #### NPM Installation
@@ -96,10 +96,10 @@ This example projects a 360 video into a videosphere and attaches the controls t
 Install via NPM:
 
 ```bash
-npm install aframe-video-controls
+npm install --save aframe-video-controls
 ```
 
-Then register and use.
+Then register and use:
 
 ```js
 require('aframe');
